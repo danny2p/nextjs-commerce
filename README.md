@@ -1,90 +1,79 @@
-# Next.js Commerce <br/> <sup><i>for BigCommerce</i></sup>
+<a href="https://catalyst.dev" target="_blank" rel="noopener norerrer">
+  <img src="https://storage.googleapis.com/bigcommerce-developers/images/catalyst_readme_banner.png" alt="Catalyst for Composable Commerce Image Banner" title="Catalyst">
+</a>
 
-This is our fork of Vercel's Next.js storefront starter.
+<br />
+<br />
 
-> [!NOTE]
-> **✨ Looking for more out-of-the-box ecommerce functionality? Try Catalyst, BigCommerce's reference storefront for Next.js. ✨**
-> 
-> Catalyst is our first-party developed and fully supported Next.js storefront, offering:
-> - Deep integration with our 100s of commerce features, all powered by GraphQL
-> - Fully customizable UI kit built specifically for ecommerce
-> - Easily configurable multi-region and multi-lingual storefront support
-> 
-> [Learn more at catalyst.dev →](https://catalyst.dev)
+<div align="center">
 
-## Prerequisites
+[![MIT License](https://img.shields.io/github/license/bigcommerce/catalyst)](LICENSE.md)
+[![Lighthouse Report](https://github.com/bigcommerce/catalyst/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/bigcommerce/catalyst/actions/workflows/lighthouse.yml) [![Lint, Typecheck, gql.tada](https://github.com/bigcommerce/catalyst/actions/workflows/basic.yml/badge.svg)](https://github.com/bigcommerce/catalyst/actions/workflows/basic.yml)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/bigcommerce/catalyst)
 
-This starter requires a [BigCommerce sandbox](https://start.bigcommerce.com/developer-sandbox/) or a [production store provisioned to run a headless storefront](https://www.bigcommerce.com/solutions/multi-store/).
+</div>
 
-To get started, use this README and the [example environment variable comments](https://github.com/bigcommerce/nextjs-commerce/blob/main/.env.example).
+> **Note:** This is the `integrations/makeswift` branch of Catalyst, which includes an integration with Makeswift for visual editing. This is the version of Catalyst deployed by default by the One-Click Catalyst functionality in the BigCommerce control panel. If you wish to use a version of Catalyst without a pre-integrated visual editor, consider the code on the `canary` branch or refer to the [tags](https://github.com/bigcommerce/catalyst/tags) for the version that's best for you.
 
-## Develop locally
+**Catalyst** is the composable, fully customizable headless commerce framework for
+[BigCommerce](https://www.bigcommerce.com/). Catalyst is built with [Next.js](https://nextjs.org/), uses
+our [React](https://react.dev/) storefront components, and is backed by the
+[GraphQL Storefront API](https://developer.bigcommerce.com/docs/storefront/graphql).
 
-Clone the template repo manually and supply the environment variables [defined in .env.example](https://github.com/bigcommerce/nextjs-commerce/blob/main/.env.example). The best practice is to use [Vercel environment variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+By choosing Catalyst, you'll have a fully-functional storefront within a few seconds, and spend zero time on wiring
+up APIs or building SEO, Accessibility, and Performance-optimized ecommerce components you've probably written many
+times before. You can instead go straight to work building your brand and making this your own.
 
-> Note: Do not commit your `.env` file. It exposes secrets that allow others to control your BigCommerce store.
+## Demo
 
-- Install the Vercel CLI:
+- [Catalyst Demo](https://catalyst-demo.site)
 
-```bash
-npm i -g vercel
-```
-- Link your local instance with the desired Vercel and GitHub accounts. This action creates a `.vercel` directory:
+![-----------------------------------------------------](https://storage.googleapis.com/bigcommerce-developers/images/catalyst_readme_hr.png)
 
-```bash
-vercel link
-```
+<p align="center">
+ <a href="https://www.catalyst.dev">🚀 catalyst.dev</a> •
+ <a href="https://developer.bigcommerce.com/community">🤗 BigCommerce Developer Community</a> •
+ <a href="https://github.com/bigcommerce/catalyst/discussions">💬 GitHub Discussions</a> •
+ <a href="/docs">💡 Docs in this repo</a>
+</p>
 
-- Download the [Vercel environment variables](https://vercel.com/docs/concepts/projects/environment-variables):
+![-----------------------------------------------------](https://storage.googleapis.com/bigcommerce-developers/images/catalyst_readme_hr.png)
 
-```bash
-vercel env pull
-```
+## Deploy via One-Click Catalyst App
 
-- Install the app's default dependencies and start the development server:
+The easiest way to deploy your Catalyst Storefront is to use the [One-Click Catalyst App](https://login.bigcommerce.com/deep-links/app/53284) available in the BigCommerce App Marketplace.
 
-```bash
-pnpm install
-pnpm dev
-```
+Check out the [Catalyst.dev One-Click Catalyst Documentation](https://www.catalyst.dev/docs/getting-started) for more details.
 
-The app runs on [localhost:3000](http://localhost:3000/).
+## Getting Started
 
-## Configure checkout
+**Requirements:**
 
-- [Optimized One-Page Checkout](https://developer.bigcommerce.com/stencil-docs/customizing-checkout/optimized-one-page-checkout)
-- [Stencil theme to customize checkout page](https://developer.bigcommerce.com/stencil-docs/getting-started/about-stencil#stencil-cli) and inform styling of shopper emails
+- A [BigCommerce account](https://www.bigcommerce.com/start-your-trial)
+- Node.js version 20 or 22
+- Corepack-enabled `pnpm`
 
-## Get to know the BigCommerce GraphQL Storefront API
+  ```bash
+  corepack enable pnpm
+  ```
 
-In addition to being compatible with BigCommerce's multi-storefront features, this starter uses the [GraphQL Storefront API](https://developer.bigcommerce.com/api-docs/storefront/graphql/graphql-api-overview). This API makes it possible for merchants to control the representation of products and categories, carts, orders, customer segmentation, and more. To get a sense of what is possible to do directly on the storefront, check out the [GraphQL Playground](https://developer.bigcommerce.com/graphql-storefront/playground).
+1. Install the latest version of Catalyst:
 
-When you access the Playground through the store control panel, BigCommerce provides a valid GraphQL Storefront authentication token without any additional API calls on your part. To access the dedicated GraphQL Playground for a particular sandbox or store, sign in to its BigCommerce account and navigate to **[Settings > API](https://login.bigcommerce.com/deep-links/manage/settings-list)**, then click **Storefront API Playground**.
+   ```bash
+   pnpm create @bigcommerce/catalyst@latest
+   ```
 
-## Explore BigCommerce features
+2. Run the local development server:
 
-Visit BigCommerce's developer center to learn more about all aspects of our platform. Here are some quick links to kick off your journey:
+   ```bash
+   pnpm run dev
+   ```
 
-Core store configuration:
+Learn more about Catalyst at [catalyst.dev](https://catalyst.dev).
 
-- [Catalog management](https://developer.bigcommerce.com/docs/rest-catalog)
-- [Multi-Storefront and alternate channel sales](https://developer.bigcommerce.com/api-docs/multi-storefront/overview)
-- [Buy Online, Pick up in Store](https://developer.bigcommerce.com/buy-online-pick-up-in-store/overview), also known as Click and Collect
-- [Webhooks](https://developer.bigcommerce.com/docs/webhooks/overview)
+## Resources
 
-Shopper journeys:
-
-- [GraphQL Storefront Faceted Search](https://developer.bigcommerce.com/api-docs/storefront/graphql/graphql-faceted-textual-search)
-- [Promotions](https://developer.bigcommerce.com/promotions/overview)
-- [Customer Segmentation](https://developer.bigcommerce.com/customer-segmentation/overview)
-- [GraphQL Storefront Carts and Checkouts](https://developer.bigcommerce.com/api-docs/storefront/graphql/carts-and-checkout)
-- [Abandoned Carts](https://developer.bigcommerce.com/docs/rest-management/abandoned-carts)
-- [Payments](https://developer.bigcommerce.com/docs/rest-payments)
-- [Tax](https://developer.bigcommerce.com/docs/rest-management/tax-settings#get-tax-settings)
-- [Orders](https://developer.bigcommerce.com/api-docs/storefronts/guide/orders)
-- [Emails](https://developer.bigcommerce.com/docs/rest-content/email-templates)
-- [Shipping](https://developer.bigcommerce.com/docs/rest-management/shipping-v2)
-
-## Join our developer community
-
-We'd love to see hear any feedback and answer your questions in our [Developer Community](https://developer.bigcommerce.com/community).
+- [Catalyst Documentation](https://catalyst.dev/docs/)
+- [GraphQL Storefront API Playground](https://developer.bigcommerce.com/graphql-storefront/playground)
+- [GraphQL Storefront API Explorer](https://developer.bigcommerce.com/graphql-storefront/explorer)
+- [BigCommerce DevDocs](https://developer.bigcommerce.com/docs/build)
